@@ -12,23 +12,23 @@ const Note = mongoose.model('Note', {
 })
 
 const note = new Note({
-  content: 'HTML on helppoa',
+  content: 'Selain osaa vain javascriptiä',
   date: new Date(),
   important: true
 })
 
-/**note
+note
   .save()
   .then(response => {
     console.log('note saved!')
     mongoose.connection.close()
-  })**/
+  })
 
-  Note
+  /**Note
   .find({})
   .then(result => {
     result.forEach(note => {
       console.log(note)
     })
     mongoose.connection.close()
-  })
+  })**/
