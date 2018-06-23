@@ -29,7 +29,7 @@ app.use(cors())
   }
 ]**/
 
-/**const url = 'mongodb://simoa:spagettikoodari1337@ds161520.mlab.com:61520/hymooc_simo_tutorial'
+/**const url = 'mongodb://simoa:<...>@ds161520.mlab.com:61520/hymooc_simo_tutorial'
 
 mongoose.connect(url)
 
