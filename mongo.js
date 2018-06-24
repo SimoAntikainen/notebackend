@@ -5,8 +5,8 @@ if ( process.env.NODE_ENV !== 'production' ) {
   require('dotenv').config()
 }
 
-const url = process.env.MONGODB_URI
-
+//const url = process.env.MONGODB_URI
+const url = 'mongodb://simoa:koodari1337@ds261660.mlab.com:61660/tuotantotutoriaali'
 mongoose.connect(url)
 
 const Note = mongoose.model('Note', {
@@ -16,7 +16,7 @@ const Note = mongoose.model('Note', {
 })
 
 const note = new Note({
-  content: 'HTML on cool',
+  content: 'Javascript rules',
   date: new Date(),
   important: true
 })
