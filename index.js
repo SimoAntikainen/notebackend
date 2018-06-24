@@ -121,11 +121,20 @@ app.post('/api/notes', (request, response) => {
     date: new Date()
   })
 
-  note
+  /**note
     .save()
     .then(savedNote => {
       response.json(formatNote(savedNote))
+    })**/
+    note
+    .save()
+    .then(savedNote => {
+      return formatNote(savedNote)
     })
+    .then(savedAndFormattedNote => {
+      response.json(savedAndFormattedNote)
+    })  
+
 })
 
 app.delete('/api/notes/:id', (request, response) => {

@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
 
 // korvaa url oman tietokantasi urlilla. ethän laita salasanaa Githubiin!
-const url = 'mongodb://simoa:<...>@ds161520.mlab.com:61520/hymooc_simo_tutorial'
+if ( process.env.NODE_ENV !== 'production' ) {
+  require('dotenv').config()
+}
+
+const url = process.env.MONGODB_URI
 
 mongoose.connect(url)
 
@@ -12,7 +16,7 @@ const Note = mongoose.model('Note', {
 })
 
 const note = new Note({
-  content: 'Selain osaa vain javascriptiä',
+  content: 'HTML on cool',
   date: new Date(),
   important: true
 })
