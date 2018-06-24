@@ -6,7 +6,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
 }
 
 //const url = process.env.MONGODB_URI
-const url = 'mongodb://simoa:koodari1337@ds261660.mlab.com:61660/tuotantotutoriaali'
+const url = process.env.MONGODB_URI
 mongoose.connect(url)
 
 const Note = mongoose.model('Note', {
