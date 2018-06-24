@@ -10,6 +10,7 @@ const url = process.env.MONGODB_URI
 console.log("URI is", url)
 
 mongoose.connect(url)
+mongoose.Promise = global.Promise
 
 const Note = mongoose.model('Note', {
   content: String,
