@@ -133,7 +133,16 @@ app.post('/api/notes', (request, response) => {
     })
     .then(savedAndFormattedNote => {
       response.json(savedAndFormattedNote)
-    })  
+    })
+    
+    /** tiiviimmin ilmaistuna
+    note
+    .save()
+    .then(formatNote)
+    .then(savedAndFormattedNote => {
+      response.json(savedAndFormattedNote)
+    }) 
+     */
 
 })
 
