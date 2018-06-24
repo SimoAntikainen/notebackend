@@ -5,7 +5,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
   console.log("This should not happen in production")
 }
 
-const url = process.env.MONGODB_URI
+const url = "mongodb://simoa:spagettikoodari1337@ds161520.mlab.com:61520/hymooc_simo_tutorial_tuotanto"
 
 console.log("URI is", url)
 
