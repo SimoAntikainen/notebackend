@@ -21,12 +21,12 @@ const note = new Note({
   important: true
 })
 
-note
+/**note
   .save()
   .then(response => {
     console.log('note saved!')
     mongoose.connection.close()
-  })
+  })**/
 
   /**Note
   .find({})

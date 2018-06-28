@@ -51,10 +51,10 @@ const formatNote = (note) => {
 
 
 const logger = (request, response, next) => {
-  console.log('Method:',request.method)
-  console.log('Path:  ', request.path)
-  console.log('Body:  ', request.body)
-  console.log('---')
+  //console.log('Method:',request.method)
+  //console.log('Path:  ', request.path)
+  //console.log('Body:  ', request.body)
+  //console.log('---')
   next()
 }
 
@@ -75,7 +75,7 @@ app.get('/api', (req, res) => {
 
 app.get('/api/notes', (request, response) => {
   Note
-    .find({}, {__v: 0})
+    .find({}, { __v: 0 })
     .then(notes => {
       response.json(notes.map(formatNote))
     })
@@ -92,7 +92,7 @@ app.get('/api/notes/:id', (request, response) => {
       }
     })
     .catch(error => {
-      console.log(error)
+      //console.log(error)
       response.status(400).send({ error: 'malformatted id' })
     })
 })
@@ -126,25 +126,22 @@ app.post('/api/notes', (request, response) => {
     .then(savedNote => {
       response.json(formatNote(savedNote))
     })**/
-    note
+  note
     .save()
     .then(savedNote => {
       return formatNote(savedNote)
     })
     .then(savedAndFormattedNote => {
-      response.json(savedAndFormattedNote)
-    })
-    
-    /** tiiviimmin ilmaistuna
-    note
+      response.json(savedAndFormattedNote)} )})
+
+/** tiiviimmin ilmaistuna
+  note
     .save()
     .then(formatNote)
     .then(savedAndFormattedNote => {
-      response.json(savedAndFormattedNote)
-    }) 
-     */
+    response.json(savedAndFormattedNote)})
+ */
 
-})
 
 app.delete('/api/notes/:id', (request, response) => {
   Note
